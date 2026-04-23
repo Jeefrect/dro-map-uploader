@@ -237,7 +237,7 @@ namespace Editor
             EditorSceneManager.OpenScene(m_targetScene);
             var scene = SceneManager.GetActiveScene();
             var sceneObjects = scene.GetRootGameObjects();
-            var root = new GameObject("root");
+            var root = new GameObject(ModMapTestTool.VALIDATION_ROOT_NAME);
 
             for (int i = 0; i < sceneObjects.Length; i++)
             {
@@ -654,4 +654,3 @@ namespace Editor
         }
     }
 }
-
