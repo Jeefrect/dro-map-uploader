@@ -15,6 +15,7 @@ namespace Editor
     public class ModMapTestTool
     {
         public const float BYTES_TO_MEGABYTES = 1048576f;
+        public const string VALIDATION_ROOT_NAME = "__MapBuilderValidationRoot__";
 
         private static readonly List<GameObject> m_gameObjects = new List<GameObject>();
         private static Dictionary<Vector3, int> m_vertexCountPositionDiscreate = new Dictionary<Vector3, int>();
@@ -198,7 +199,7 @@ namespace Editor
                 return null;
             }
 
-            var root = GameObject.Find("root");
+            var root = GameObject.Find(VALIDATION_ROOT_NAME);
 
             if (root == null)
             {
@@ -208,7 +209,7 @@ namespace Editor
         
             var modMapTool = new ModMapTestTool
             {
-                m_root = GameObject.Find("root"),
+                m_root = root,
                 m_currentName = name
             };
         
